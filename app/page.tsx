@@ -16,13 +16,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
         {/* Background Image Layer */}
-        <div
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat opacity-100"
-          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+        <div 
+          className="fixed top-0 left-0 w-full h-full -z-10"
+          style={{
+            backgroundImage: "url('/hero-bg.jpg')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.3
+          }}
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="fixed top-0 left-0 w-full h-full -z-10 hero-gradient" />
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto">

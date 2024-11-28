@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
     location: "Estados Unidos",
     screenshot: "/testimonials/user3.png",
     content:
-      "Estou animada para compartilhar que ganhei mais R$ 8.230,00 este mês, somando aos R$ 11.443,00 que ganhei anteriormente! Foi um mês fantástico cheio de trabalho duro.",
+      "Estou animada para compartilhar que ganhei mais $8.230,00 este mês, somando aos $11.443,00 que ganhei anteriormente! Foi um mês fantástico cheio de trabalho duro.",
     results: "$8,230.00 este mês + $11,443.00 anterior",
   },
   {

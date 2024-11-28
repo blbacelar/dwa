@@ -10,6 +10,8 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  min-height: 100vh;
+  position: relative;
 }
 
 @layer components {
@@ -20,9 +22,9 @@ body {
   .hero-gradient {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.7) 50%,
-      rgba(0, 0, 0, 0.9) 100%
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.8) 100%
     );
   }
 
@@ -52,4 +54,9 @@ body {
   .bg-black .cta-button-secondary {
     @apply border-gold-400 text-gold-400 hover:bg-gold-400/10;
   }
+}
+
+section {
+  position: relative;
+  z-index: 1;
 }
