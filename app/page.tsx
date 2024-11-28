@@ -12,15 +12,13 @@ const BR_PURCHASE_LINK = "https://pay.hotmart.com/D96539582S?off=4q1h6cn8";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Updated height classes */}
+      {/* Hero Section */}
       <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
         {/* Background Image Layer */}
         <div
-          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/hero-bg.jpg')`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
+            backgroundImage: `url('/hero-bg.jpg')`,
           }}
         />
 
