@@ -4,6 +4,7 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 import ModulesList from "./components/ModulesList";
 import VideoSection from "./components/VideoSection";
 import Footer from "./components/Footer";
+import Image from "next/image";
 
 const PURCHASE_LINK =
   "https://shop.beacons.ai/digitalcomge/99dae70e-1d3e-4b3b-8f12-46c9ccee44fe";
@@ -15,11 +16,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
         {/* Background Image Layer */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/hero-bg.jpg')`,
-          }}
+        <Image
+          src="/hero-bg.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
 
         {/* Gradient Overlay */}
