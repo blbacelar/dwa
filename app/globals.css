@@ -3,19 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .gold-gradient {
+    background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+  }
+
+  .cta-button {
+    @apply gold-gradient text-black font-bold py-4 px-8 rounded-full 
+           transform transition-all duration-300 hover:scale-105 
+           hover:shadow-lg hover:shadow-gold-300/30;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-2 text-center;
+  }
+
+  .video-wrapper {
+    @apply relative aspect-video w-full rounded-xl overflow-hidden 
+           shadow-xl shadow-gold-400/10 transition-transform duration-300
+           hover:shadow-gold-400/20 hover:scale-[1.01];
+  }
+
+  .cta-button-secondary {
+    @apply bg-transparent border-2 border-black font-bold py-4 px-8 rounded-full 
+           transform transition-all duration-300 hover:scale-105 
+           hover:shadow-lg hover:shadow-gold-300/30 hover:bg-black/10;
+  }
+
+  /* For the black background sections */
+  .bg-black .cta-button-secondary {
+    @apply border-gold-400 text-gold-400 hover:bg-gold-400/10;
+  }
 }

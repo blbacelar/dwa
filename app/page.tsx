@@ -1,101 +1,140 @@
-import Image from "next/image";
+import CountdownTimer from "./components/CountdownTimer";
+import BenefitCard from "./components/BenefitCard";
+import TestimonialCarousel from "./components/TestimonialCarousel";
+import ModulesList from "./components/ModulesList";
+import VideoSection from "./components/VideoSection";
+import Footer from "./components/Footer";
+
+const PURCHASE_LINK =
+  "https://shop.beacons.ai/digitalcomge/99dae70e-1d3e-4b3b-8f12-46c9ccee44fe";
+const BR_PURCHASE_LINK = "https://pay.hotmart.com/D96539582S?off=4q1h6cn8";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="min-h-screen">
+      {/* Hero Section - Updated height classes */}
+      <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
+        {/* Background Image Layer */}
+        <div
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/images/hero-bg.jpg')`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 hero-gradient" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6">
+            Transforme seu conhecimento em lucro online
+            <span className="text-gold-400"> — Comece hoje mesmo!</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8">
+            Aprenda com especialistas internacionais, acesse conteúdos
+            exclusivos e comece a ganhar em dólares.
+          </p>
+          <CountdownTimer targetDate="2024-11-29T16:00:00" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6 sm:mt-8">
+            <a
+              href={PURCHASE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button inline-block text-sm sm:text-base"
+            >
+              Pagar em Dólar CAD ($567)
+            </a>
+            <a
+              href={BR_PURCHASE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-button-secondary inline-block text-sm sm:text-base"
+            >
+              Pagar em Real (12x R$249,21)
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Video Section */}
+      <VideoSection purchaseLink={PURCHASE_LINK} />
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 bg-black/80">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="section-title">
+            O que você vai encontrar no{" "}
+            <span className="text-gold-400">DWA</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <BenefitCard
+              icon="/icons/modules.svg"
+              title="38+ Módulos Completos"
+              description="Conteúdo atualizado + 11 novos módulos em breve"
+            />
+            <BenefitCard
+              icon="/icons/digital-products.svg"
+              title="Produtos digitais"
+              description="9 produtos digitais prontos para venda com 100% de royalties"
+            />
+            <BenefitCard
+              icon="/icons/community.svg"
+              title="Acompanhamento"
+              description="Suporte e acompanhamento quinzenal"
+            />
+            {/* Add more BenefitCards */}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="section-title">O que nossos alunos estão dizendo</h2>
+          <TestimonialCarousel />
+        </div>
+      </section>
+
+      {/* Modules Section */}
+      <ModulesList />
+
+      {/* Final CTA Section */}
+      <section className="py-20 px-4 gold-gradient">
+        <div className="max-w-4xl mx-auto text-center text-black">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Última chance de garantir seu desconto!
+          </h2>
+          <div className="text-2xl md:text-4xl mb-8">
+            <span className="line-through opacity-75">$2.500</span>
+            <span className="font-bold ml-4">$567</span>
+          </div>
+          <CountdownTimer targetDate="2024-11-29T16:00:00" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <a
+              href={PURCHASE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black text-white cta-button inline-block"
+            >
+              Pagar em Dólar CAD ($567)
+            </a>
+            <a
+              href={BR_PURCHASE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black text-white cta-button-secondary inline-block"
+            >
+              Pagar em Real (12x R$249,21)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
