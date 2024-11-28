@@ -16,17 +16,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
         {/* Background Image Layer */}
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-bg.jpg"
-            alt="Hero background"
-            fill
-            priority
-            quality={100}
-            className="object-cover object-center opacity-100"
-            unoptimized
-          />
-        </div>
+        <div
+          className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center bg-no-repeat opacity-100"
+          style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+        />
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 hero-gradient" />
