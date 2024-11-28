@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const socialLinks = [
   {
@@ -32,6 +32,16 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // or a loading state
+  }
+
   return (
     <footer className="bg-black/90 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -53,17 +63,15 @@ export default function Footer() {
             </h3>
             <div className="flex justify-center gap-4">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gold-400 transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="text-gray-400 hover:text-gold-400 transition-all hover:scale-110 active:scale-95"
                 >
                   {social.icon}
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>

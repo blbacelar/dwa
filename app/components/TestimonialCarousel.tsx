@@ -69,8 +69,10 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const timer = setInterval(() => {
       setCurrentIndex((current) =>
         current === testimonials.length - 1 ? 0 : current + 1
@@ -80,14 +82,18 @@ export default function TestimonialCarousel() {
     return () => clearInterval(timer);
   }, []);
 
+  if (!isClient) {
+    return null; // or a loading state
+  }
+
   return (
     <div className="relative overflow-hidden min-h-[600px]">
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
@@ -136,14 +142,12 @@ export default function TestimonialCarousel() {
 
       <div className="flex justify-center gap-2 mt-8">
         {testimonials.map((_, index) => (
-          <motion.button
+          <button
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-3 rounded-full transition-all ${
               index === currentIndex ? "bg-gold-400 w-6" : "bg-gray-600 w-3"
-            }`}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
+            } hover:scale-110 active:scale-95`}
           />
         ))}
       </div>
