@@ -39,12 +39,13 @@ export default function Footer() {
   }, []);
 
   if (!isClient) {
-    return null; // or a loading state
+    return null;
   }
 
   return (
-    <footer className="bg-black/90 text-white py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+    <footer className="relative bg-black text-white py-12 px-4">
+      <div className="absolute inset-0 bg-black" />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Column */}
           <div className="text-center md:text-left">
