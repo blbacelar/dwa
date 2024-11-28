@@ -23,7 +23,7 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.3
+            opacity: 0.80
           }}
         />
 
