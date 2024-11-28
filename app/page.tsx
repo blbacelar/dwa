@@ -16,14 +16,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen py-20 flex items-center justify-center text-center px-4">
         {/* Background Image Layer */}
-        <Image
-          src="/hero-bg.jpg"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Hero background"
+            fill
+            priority
+            quality={100}
+            className="object-cover object-center opacity-100"
+            unoptimized
+          />
+        </div>
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 hero-gradient" />
