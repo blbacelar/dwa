@@ -45,6 +45,36 @@ const modules: Module[] = [
     title: "Marketing Anônimo",
     icon: "🎭",
     description: "Estratégias avançadas de marketing mantendo seu anonimato"
+  },
+  {
+    id: 7,
+    title: "Monetização no Youtube",
+    icon: "▶️",
+    description: "Aprenda a criar conteúdo e monetizar no Youtube"
+  },
+  {
+    id: 8,
+    title: "Criar seu próprio curso",
+    icon: "📚",
+    description: "Do planejamento ao lançamento do seu produto digital"
+  },
+  {
+    id: 9,
+    title: "Monetização na Amazon",
+    icon: "💰",
+    description: "Estratégias avançadas para vender na Amazon"
+  },
+  {
+    id: 10,
+    title: "Print on Demand",
+    icon: "👕",
+    description: "Crie e venda produtos personalizados sem estoque"
+  },
+  {
+    id: 11,
+    title: "E muito mais...",
+    icon: "✨",
+    description: "Novos módulos são adicionados regularmente com técnicas atualizadas"
   }
 ];
 
