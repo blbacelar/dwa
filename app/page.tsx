@@ -113,8 +113,8 @@ export default function Home() {
               Última chance de garantir seu desconto!
             </h2>
             <div className="text-2xl md:text-4xl mb-8">
-              <span className="line-through opacity-75">$2.500</span>
-              <span className="font-bold ml-4">$567</span>
+              <span className="line-through opacity-75">CAD $2.500</span>
+              <span className="font-bold ml-4">CAD $567</span>
             </div>
             <CountdownTimer targetDate="2024-11-29T16:00:00" />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
