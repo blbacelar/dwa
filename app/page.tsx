@@ -121,7 +121,7 @@ export default function Home() {
               </h2>
               <div className="text-2xl md:text-4xl mb-8">
                 <span className="line-through opacity-75">CAD $717</span>
-                <span className="font-bold ml-4">CAD $567</span>
+                <span className="font-bold ml-4">CAD $577</span>
               </div>
               <CountdownTimer targetDate={PROMO_END_DATE} />
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
