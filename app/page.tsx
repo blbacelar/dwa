@@ -13,6 +13,22 @@ const BR_PURCHASE_LINK = "https://pay.hotmart.com/D96539582S?off=4q1h6cn8";
 const BEACONS_LINK = "https://beacons.ai/digitalcomge";
 const PROMO_END_DATE = "2025-01-02T09:00:00-05:00";
 
+// Price constants
+const PRICES = {
+  CAD: {
+    original: 717,
+    discounted: 577,
+    currency: "CAD",
+    format: (value: number) => `${PRICES.CAD.currency} $${value}`,
+  },
+  BRL: {
+    installments: 12,
+    installmentValue: 249.21,
+    format: (installments: number, value: number) =>
+      `${installments}x R$${value.toFixed(2)}`,
+  },
+} as const;
+
 export default function Home() {
   return (
     <>
@@ -55,7 +71,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="cta-button inline-block text-sm sm:text-base"
                 >
-                  Pagar em Dólar CAD ($577)
+                  Pagar em Dólar ({PRICES.CAD.format(PRICES.CAD.discounted)})
                 </a>
                 <a
                   href={BR_PURCHASE_LINK}
@@ -63,7 +79,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="cta-button-secondary inline-block text-sm sm:text-base"
                 >
-                  Pagar em Real (12x R$249,21)
+                  Pagar em Real (
+                  {PRICES.BRL.format(
+                    PRICES.BRL.installments,
+                    PRICES.BRL.installmentValue
+                  )}
+                  )
                 </a>
               </div>
             </div>
@@ -120,8 +141,12 @@ export default function Home() {
                 Última chance de garantir seu desconto!
               </h2>
               <div className="text-2xl md:text-4xl mb-8">
-                <span className="line-through opacity-75">CAD $717</span>
-                <span className="font-bold ml-4">CAD $577</span>
+                <span className="line-through opacity-75">
+                  {PRICES.CAD.format(PRICES.CAD.original)}
+                </span>
+                <span className="font-bold ml-4">
+                  {PRICES.CAD.format(PRICES.CAD.discounted)}
+                </span>
               </div>
               <CountdownTimer targetDate={PROMO_END_DATE} />
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -131,7 +156,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="bg-black text-white cta-button inline-block"
                 >
-                  Pagar em Dólar CAD ($577)
+                  Pagar em Dólar ({PRICES.CAD.format(PRICES.CAD.discounted)})
                 </a>
                 <a
                   href={BR_PURCHASE_LINK}
@@ -139,7 +164,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="bg-black text-white cta-button-secondary inline-block"
                 >
-                  Pagar em Real (12x R$249,21)
+                  Pagar em Real (
+                  {PRICES.BRL.format(
+                    PRICES.BRL.installments,
+                    PRICES.BRL.installmentValue
+                  )}
+                  )
                 </a>
               </div>
             </div>
