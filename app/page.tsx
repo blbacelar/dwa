@@ -11,15 +11,12 @@ const PURCHASE_LINK =
   "https://shop.beacons.ai/digitalcomge/99dae70e-1d3e-4b3b-8f12-46c9ccee44fe";
 const BR_PURCHASE_LINK = "https://pay.hotmart.com/D96539582S?off=4q1h6cn8";
 const BEACONS_LINK = "https://beacons.ai/digitalcomge";
-const PROMO_END_DATE = "2024-11-29T16:00:00";
+const PROMO_END_DATE = "2025-01-02T09:00:00-05:00";
 
 export default function Home() {
   return (
     <>
-      <PromoEndedModal 
-        beaconsLink={BEACONS_LINK} 
-        endDate={PROMO_END_DATE}
-      />
+      <PromoEndedModal beaconsLink={BEACONS_LINK} endDate={PROMO_END_DATE} />
       <div className="min-h-screen relative">
         {/* Background Image Layer - Move it to the main container */}
         <div
@@ -50,7 +47,7 @@ export default function Home() {
                 Aprenda com especialistas internacionais, acesse conteúdos
                 exclusivos e comece a ganhar em dólares.
               </p>
-              <CountdownTimer targetDate="2024-11-29T16:00:00" />
+              <CountdownTimer targetDate={PROMO_END_DATE} />
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6 sm:mt-8">
                 <a
                   href={PURCHASE_LINK}
@@ -58,7 +55,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="cta-button inline-block text-sm sm:text-base"
                 >
-                  Pagar em Dólar CAD ($567)
+                  Pagar em Dólar CAD ($577)
                 </a>
                 <a
                   href={BR_PURCHASE_LINK}
@@ -106,7 +103,9 @@ export default function Home() {
           {/* Testimonials Section */}
           <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className="section-title">O que nossos alunos estão dizendo</h2>
+              <h2 className="section-title">
+                O que nossos alunos estão dizendo
+              </h2>
               <TestimonialCarousel />
             </div>
           </section>
@@ -124,7 +123,7 @@ export default function Home() {
                 <span className="line-through opacity-75">CAD $2.500</span>
                 <span className="font-bold ml-4">CAD $567</span>
               </div>
-              <CountdownTimer targetDate="2024-11-29T16:00:00" />
+              <CountdownTimer targetDate={PROMO_END_DATE} />
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <a
                   href={PURCHASE_LINK}
@@ -132,7 +131,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="bg-black text-white cta-button inline-block"
                 >
-                  Pagar em Dólar CAD ($567)
+                  Pagar em Dólar CAD ($577)
                 </a>
                 <a
                   href={BR_PURCHASE_LINK}
